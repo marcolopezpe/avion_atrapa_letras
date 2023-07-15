@@ -1,0 +1,12 @@
+datas=[
+        ('./assets/audio/*.mp3', 'assets/audio'),
+        ('./assets/images/avion/*.png', 'assets/images/avion'),
+        ('./assets/images/hearts/*.png', 'assets/images/hearts'),
+        ('./assets/images/letras/*.png', 'assets/images/letras'),
+        ('./assets/images/letras_transparentes/*.png', 'assets/images/letras_transparentes'),
+        ('./assets/images/numeros/*.png', 'assets/images/numeros'),
+        ('./assets/images/vocales/*.png', 'assets/images/vocales'),
+        ('./assets/images/*.png', 'assets/images'),
+        ('./assets/sounds/*.ogg', 'assets/sounds'),
+        ('./assets/sounds/*.mp3', 'assets/sounds')
+    ],
