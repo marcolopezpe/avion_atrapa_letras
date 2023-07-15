@@ -73,17 +73,11 @@ class Game:
 
         while self.replay:
             self.replay = False
-            self.menu()
+            self.menu_intro()
             self.game_play()
             self.game_over()
             if not self.replay:
                 break
-            else:
-                LIVES = LIVES_INITIAL
-                WORD = random.choice(list(RANDOM_WORDS))
-                self.intro = True
-                self.play = True
-                self.gameover = True
 
         pygame.quit()
 
@@ -108,7 +102,7 @@ class Game:
         for current_letter in letters:
             self.screen.blit(current_letter['image'], current_letter['rect'])
 
-    def menu(self):
+    def menu_intro(self):
         self.draw_bg_image()
 
         prefijo = self.font2.render("Vamos a jugar", True, WHITE)
@@ -149,7 +143,12 @@ class Game:
             self.clock.tick(30)
 
     def play_button_click(self):
+        global LIVES, WORD
+        LIVES = LIVES_INITIAL
+        WORD = random.choice(list(RANDOM_WORDS))
         self.intro = False
+        self.play = True
+        self.gameover = True
 
     def exist_letter_in_word(self, letters, letter):
         for w in letters:
@@ -246,4 +245,5 @@ class Game:
     def restart_button_click(self):
         self.gameover = False
         self.replay = True
+        self.intro = True
         pygame.display.flip()
